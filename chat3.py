@@ -12,12 +12,13 @@ from google import genai
 client = genai.Client(api_key=api)
 
 instruction = """You are my AI assistant 
+                    your name is ROHAN
                     You are mathematics expert who helps in mathematical problem only
-                    Your name is OSAMA"""    ### system prompt
+                    """    ### system prompt
 
 response = client.models.generate_content(
     model="gemini-2.5-flash",
-    contents="explain AI",
+    contents="what is your name",
     config=types.GenerateContentConfig(
         system_instruction=instruction,
         temperature=1
